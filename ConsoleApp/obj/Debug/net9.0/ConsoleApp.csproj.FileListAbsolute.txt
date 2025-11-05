@@ -1,0 +1,14 @@
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\bin\Debug\net9.0\ConsoleApp.exe
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\bin\Debug\net9.0\ConsoleApp.deps.json
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\bin\Debug\net9.0\ConsoleApp.runtimeconfig.json
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\bin\Debug\net9.0\ConsoleApp.dll
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\bin\Debug\net9.0\ConsoleApp.pdb
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\obj\Debug\net9.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\obj\Debug\net9.0\ConsoleApp.AssemblyInfoInputs.cache
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\obj\Debug\net9.0\ConsoleApp.AssemblyInfo.cs
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\obj\Debug\net9.0\ConsoleApp.csproj.CoreCompileInputs.cache
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\obj\Debug\net9.0\ConsoleApp.dll
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\obj\Debug\net9.0\refint\ConsoleApp.dll
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\obj\Debug\net9.0\ConsoleApp.pdb
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\obj\Debug\net9.0\ConsoleApp.genruntimeconfig.cache
+D:\SOFTWARE ENGINEERING\PROGRAMMING TUTORIALS\C#\intro-github\ConsoleApp\obj\Debug\net9.0\ref\ConsoleApp.dll
