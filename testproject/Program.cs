@@ -404,7 +404,7 @@ class inheritance and polymorphism
 // }
 
 
-/*-------------0verriding members in the derived class----------*/
+/*-------------0verriding members in the derived class----------
 
 //step 1:  Create instances of the base class and the derived classes
 BaseClass baseClass = new BaseClass();
@@ -457,5 +457,94 @@ public class DerivedClass: BaseClass
     public void Method2()
     {
         Console.WriteLine("Base - Method2");
+    }
+}
+*/
+
+/*--------Override implicitly inherited members of the Object class----------*/
+
+// create instances of the derived classes
+DerivedClass1 derivedClass1 = new DerivedClass1();
+DerivedClass2 derivedClass2a = new DerivedClass2 { Property1 = "Value1", Property2 = "Value2" };
+DerivedClass2 derivedClass2b = new DerivedClass2 { Property1 = "Value1", Property2 = "Value2" };
+DerivedClass2 derivedClass2c = new DerivedClass2 { Property1 = "Value3", Property2 = "Value4" };
+
+// demonstrate Object class methods for DerivedClass1
+Console.WriteLine("\nDemonstrating Object class methods for DerivedClass1:");
+Console.WriteLine($"ToString: {derivedClass1.ToString()}");
+Console.WriteLine($"Equals: {derivedClass1.Equals(new DerivedClass1())}");
+Console.WriteLine($"GetHashCode: {derivedClass1.GetHashCode()}");
+
+// demonstrate overridden Object class methods for DerivedClass2
+Console.WriteLine("\nDemonstrating overridden Object class methods for DerivedClass2:");
+Console.WriteLine($"ToString: {derivedClass2a.ToString()}");
+Console.WriteLine($"Equals (derivedClass2a vs derivedClass2b): {derivedClass2a.Equals(derivedClass2b)}"); // should return true
+Console.WriteLine($"Equals (derivedClass2a vs derivedClass2c): {derivedClass2a.Equals(derivedClass2c)}"); // should return false
+Console.WriteLine($"GetHashCode (derivedClass2a): {derivedClass2a.GetHashCode()}");
+Console.WriteLine($"GetHashCode (derivedClass2b): {derivedClass2b.GetHashCode()}");
+Console.WriteLine($"GetHashCode (derivedClass2c): {derivedClass2c.GetHashCode()}");
+public abstract class BaseClass
+{
+    public abstract string Property1 { get; set; }
+    public virtual string Property2 { get; set; } = "Base - Property2";
+
+    public abstract void Method1();
+    public void Method2()
+    {
+        Console.WriteLine("Base - Method2");
+    }
+}
+
+public class DerivedClass1 : BaseClass
+{
+    public override string Property1 { get; set; } = "Derived1 - Property1";
+    public new string Property2 { get; set; } = "Derived1 - Property2";
+
+    public override void Method1()
+    {
+        Console.WriteLine("Derived1 - Method1");
+    }
+
+    public new void Method2()
+    {
+        Console.WriteLine("Derived1 - Method2");
+    }
+}
+
+public class DerivedClass2 : BaseClass
+{
+    public override string Property1 { get; set; } = "Derived2 - Property1";
+    public new string Property2 { get; set; } = "Derived2 - Property2";
+
+    public override void Method1()
+    {
+        Console.WriteLine("Derived2 - Method1");
+    }
+
+    public new void Method2()
+    {
+        Console.WriteLine("Derived2 - Method2");
+    }
+
+    //override ToString method
+    public override string ToString()
+    {
+        return $"DerivedClass2: Property = {Property1}, Property2 = {Property2}";
+    }
+
+    //override Equals method
+    public override bool Equals(object obj)
+    {
+        if (obj is DerivedClass2 other)
+        {
+            return Property1 == other.Property1 && Property2 == other.Property2;
+        }
+        return false;
+    }
+
+    //override GetHashCode method
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Property1, Property2);
     }
 }
