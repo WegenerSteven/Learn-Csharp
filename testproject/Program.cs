@@ -333,19 +333,63 @@ class inheritance and polymorphism
 // }
 /**-----------Examine the use of the virtual keyword----------*/
 
-public class Animal
+// public class Animal
+// {
+//     public virtual void MakeSound()
+//     {
+//         Console.WriteLine("Animal makes a sound");
+//     }
+// }
+
+// public class Dog: Animal
+// {
+//     public override void MakeSound()
+//     {
+//         Console.WriteLine("Dog barks");
+//     }
+// }
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         Animal animal = new Dog();
+//         animal.MakeSound();
+//     }
+// }
+
+public class BaseClass
 {
-    public virtual void MakeSound()
+    public virtual void method1()
     {
-        Console.WriteLine("Animal makes a sound");
+        Console.WriteLine("Method1 in BaseClass");
+    }
+
+    public virtual void Method2()
+    {
+        Console.WriteLine("Method2 in BaseClass");
     }
 }
 
-public class Dog: Animal
+public class DerivedClass : BaseClass
 {
-    public override void MakeSound()
+    public sealed override void method1()
     {
-        Console.WriteLine("Dog barks");
+        Console.WriteLine("Method1 in DerivedClass");
+    }
+
+    public override void Method2()
+    {
+        Console.WriteLine("Method2 in DerivedClass");
+    }
+}
+
+public class FinalClass : DerivedClass
+{
+    //this can't override method1 because it's sealed in DerivedClass
+    public override void Method2()
+    {
+        Console.WriteLine("Method2 in Finalclass");
     }
 }
 
@@ -353,7 +397,9 @@ class Program
 {
     static void Main()
     {
-        Animal animal = new Dog();
-        animal.MakeSound();
+        Console.WriteLine();
+        DerivedClass final = new FinalClass();
+        final.Method2();
     }
 }
+
