@@ -358,48 +358,104 @@ class inheritance and polymorphism
 //     }
 // }
 
+// public class BaseClass
+// {
+//     public virtual void method1()
+//     {
+//         Console.WriteLine("Method1 in BaseClass");
+//     }
+
+//     public virtual void Method2()
+//     {
+//         Console.WriteLine("Method2 in BaseClass");
+//     }
+// }
+
+// public class DerivedClass : BaseClass
+// {
+//     public sealed override void method1()
+//     {
+//         Console.WriteLine("Method1 in DerivedClass");
+//     }
+
+//     public override void Method2()
+//     {
+//         Console.WriteLine("Method2 in DerivedClass");
+//     }
+// }
+
+// public class FinalClass : DerivedClass
+// {
+//     //this can't override method1 because it's sealed in DerivedClass
+//     public override void Method2()
+//     {
+//         Console.WriteLine("Method2 in Finalclass");
+//     }
+// }
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         Console.WriteLine();
+//         DerivedClass final = new FinalClass();
+//         final.Method2();
+//     }
+// }
+
+
+/*-------------0verriding members in the derived class----------*/
+
+//step 1:  Create instances of the base class and the derived classes
+BaseClass baseClass = new BaseClass();
+DerivedClass derivedClass = new DerivedClass();
+BaseClass baseClassReferencingDerivedClass = new DerivedClass();
+
+//Step 2: Access properties and methods of the base class
+Console.WriteLine($"\n{baseClass.Property1}");
+Console.WriteLine($"{baseClass.Property2}");
+baseClass.Method1();
+baseClass.Method2();
+
+// Step 3: Access properties and methods of the derived class
+Console.WriteLine($"\n{derivedClass.Property1}");
+Console.WriteLine($"{derivedClass.Property2}");
+derivedClass.Method1();
+derivedClass.Method2();
+
+// Step 4: Access properties and methods of the base class that references the derived class
+Console.WriteLine($"\n{baseClassReferencingDerivedClass.Property1}");
+Console.WriteLine($"{baseClassReferencingDerivedClass.Property2}");
+baseClassReferencingDerivedClass.Method1();
+baseClassReferencingDerivedClass.Method2();
 public class BaseClass
 {
-    public virtual void method1()
+    public virtual string Property1{get; set;} = "Base - Property1";
+    public virtual string Property2{get; set;} = "Base - Property2";
+
+    public virtual void Method1()
     {
-        Console.WriteLine("Method1 in BaseClass");
+        Console.WriteLine("Base - Method1");
     }
 
-    public virtual void Method2()
+    public void Method2()
     {
-        Console.WriteLine("Method2 in BaseClass");
+        Console.WriteLine("Base - Method2");
     }
 }
 
-public class DerivedClass : BaseClass
+public class DerivedClass: BaseClass
 {
-    public sealed override void method1()
+    public override string Property1 { get; set; } = "Derived - Property1";
+    public new string Property2{get; set;} = "Derived - Property2";
+
+    public override void Method1()
     {
-        Console.WriteLine("Method1 in DerivedClass");
+        Console.WriteLine("Base - Method1");
     }
 
-    public override void Method2()
+    public void Method2()
     {
-        Console.WriteLine("Method2 in DerivedClass");
-    }
-}
-
-public class FinalClass : DerivedClass
-{
-    //this can't override method1 because it's sealed in DerivedClass
-    public override void Method2()
-    {
-        Console.WriteLine("Method2 in Finalclass");
+        Console.WriteLine("Base - Method2");
     }
 }
-
-class Program
-{
-    static void Main()
-    {
-        Console.WriteLine();
-        DerivedClass final = new FinalClass();
-        final.Method2();
-    }
-}
-
